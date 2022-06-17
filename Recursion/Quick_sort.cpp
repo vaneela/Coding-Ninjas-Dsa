@@ -14,7 +14,7 @@ int partition(int *arr, int s, int e)
     }
     // cout << c << endl;
     swap(arr[s], arr[s + c]);
-    int i = 0, j = e;
+    int i = s, j = e;
     c+=s;
     while (i < c && j > c)
     {
