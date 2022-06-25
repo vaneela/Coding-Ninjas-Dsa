@@ -22,7 +22,7 @@ class fraction{
             numerator /= gcd;
             denominator /=gcd;
         }
-        void addfraction(fraction const &f1){
+        void add(fraction const &f1){
             int lcm = denominator * f1.denominator;
             int x = lcm/denominator;
             int y = lcm/f1.denominator;
@@ -30,6 +30,16 @@ class fraction{
             numerator += f1.numerator*y;
             denominator = lcm;
             simplify();
+        }
+        fraction operator+(fraction const &f1){
+            int lcm = denominator * f1.denominator;
+            int x = lcm/denominator;
+            int y = lcm/f1.denominator;
+            int num = numerator*x +f1.numerator*y;
+            numerator =0;
+            fraction f4(num,lcm);
+            f4.simplify();
+            return f4;
         }
         void multiply(fraction const &f1){
             numerator *= f1.numerator;
@@ -41,7 +51,10 @@ int main(){
     fraction f1(5,16),f2(3,8);
     f1.print();
     f2.print();
-    f1.multiply(f2);
+    
+    fraction f4=f1+f2;
+    f4.print();
+    // f1.add(f2);
     f1.print();
     f2.print();
     return 0;
