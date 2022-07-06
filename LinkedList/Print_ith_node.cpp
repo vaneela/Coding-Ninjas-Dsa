@@ -1,4 +1,4 @@
-void printIthNode(Node *head, int i)
+void printIthNode(Node *head, int i )
 {
     //Write your code here
     int n=0;
