@@ -19,6 +19,6 @@ bool isPalindrome(Node *head)
         arr.push_back(head->data);
         head=head->next;
     }
-    return pal(arr);
+     return pal(arr);
     
 }
