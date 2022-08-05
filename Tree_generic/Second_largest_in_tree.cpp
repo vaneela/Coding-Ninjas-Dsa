@@ -17,8 +17,6 @@ void largerst(TreeNode<int>* root,TreeNode<int>**fir,TreeNode<int>**sec){
     for(int i=0;i<root->children.size();i++){
         largerst(root->children[i],fir,sec);
     }
-    
-    
 }
 TreeNode<int>* getSecondLargestNode(TreeNode<int>* root) {
     // Write your code here
@@ -30,8 +28,6 @@ TreeNode<int>* getSecondLargestNode(TreeNode<int>* root) {
     largerst(root,&large,&slarge);
     if(slarge==NULL)
         return NULL;
-    
- 
     
     return slarge;
 }
